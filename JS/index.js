@@ -1,6 +1,6 @@
 "use strict"
 document.getElementById("bEnviar").addEventListener("click", validar);
-document.getElementById("bBorrar"), addEventListener("click", borrar);
+document.getElementById("bBorrar").addEventListener("click", borrar);
 
 function validar() {
     try {
