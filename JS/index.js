@@ -34,7 +34,27 @@ function validar() {
             
         }
 
-        
+        //chekbox 
+        let condi = document.getElementById("ident");
+         for (let i = 0; i < condi.length; i++) {
+         }
+
+         //radio
+        let anos = document.getElementById("edad");
+        for (let i = 0; i < anos.length && !anos[i].checked; i++);
+        if (i == anos.length)
+            throw "La edad es obligatoria";
+        let edad = anos[i].value;
+
+        //creacion del objeto dato
+        let datos = {nombre:nombre, 
+            apellido:apellido, correo:correo, 
+            provincia:provincia, edad:edad, 
+            ident:ident
+        }
+
+        alert("Nombre: " + datos.nombre + "\n Apellido " + datos.apellido +  "\n Correo " + datos.correo 
+            + "\n Provincia " + datos.provincia + "\n edad " + datos.edad + "\n Aceptando condiciones " + datos.ident);
 
     } catch (error) {
         alert(error)
@@ -42,7 +62,6 @@ function validar() {
 }
 
 function borrar() {
-    alert(1)
     try {
         document.getElementById("nombre").value = "";
         document.getElementById("apellido").value = "";
