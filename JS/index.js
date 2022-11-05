@@ -11,7 +11,7 @@ function validar() {
         let nombre = document.getElementById("nombre").value;
         let apellido = document.getElementById("apellido").value;
         let correo = document.getElementById("correo").value;
-        //let provincia = document.getElementById("provincia").value;
+        let provincia = document.getElementById("provincia").value;
 
         if (!exVal.test(nombre)) {
             alert(1)
@@ -31,19 +31,17 @@ function validar() {
             throw  "En el formulario hay datos MAL";
         }
         
-       /* if (!exVal.test("provincia")) {
+       if (!exVal.test(provincia)) {
             alert(4)
             document.getElementById("provincia").focus();
             throw  "En el formulario hay datos MAL";
             
-        }*/
-
-         
-      
+        }
 
          //radio
         let anos = document.getElementsByName("edad");
         let i;
+        
         for (i = 0; i < anos.length && !anos[i].checked ; i++);
         if (i == anos.length)
             throw "Tienes que poner la edad";
@@ -64,12 +62,12 @@ function validar() {
         //creacion del objeto dato
         let datos = {nombre:nombre, 
             apellido:apellido, correo:correo, 
-            /*provincia:provincia*/ edad:edad, 
-            acept:acept
+            provincia:provincia, edad:edad, 
+            cond:cond
         }
 
         alert("Nombre: " + datos.nombre + "\n Apellido " + datos.apellido +  "\n Correo " + datos.correo 
-            /*+ "\n Provincia " + datos.provincia*/ + "\n edad " + datos.edad + "\n Aceptando condiciones " + datos.acept);
+            + "\n Provincia " + datos.provincia + "\n edad " + datos.edad + "\n Aceptando condiciones " + datos.cond);
 
     } catch (error) {
         alert(error)
